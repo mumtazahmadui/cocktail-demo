@@ -1,0 +1,6 @@
+<mat-card class="drink-card" (click)="selectDrink(data.idDrink)">
+  <mat-card-header>
+    <mat-card-title class="title-font">{{ data.strDrink }}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="data.strDrinkThumb" alt="data.strDrinkThumb" />
+</mat-card>

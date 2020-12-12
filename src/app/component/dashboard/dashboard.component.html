@@ -1,0 +1,33 @@
+<div class="row mt-5" *ngIf="successFilter; else loader">
+  <div class="col-5 col-md-3">
+    <app-filters
+      [queryFilter]="queryFilter"
+      [queryFilterName]="queryFilterName"
+      [filters]="filters"
+    ></app-filters>
+  </div>
+  <div class="col-7 col-md-9">
+    <div class="container">
+      <app-drinks
+        [drinks]="drinks"
+        [isEmpty]="isEmpty"
+        (selectedDrink)="selectedDrink($event)"
+        [filterCode]="filterCode"
+      ></app-drinks>
+    </div>
+  </div>
+</div>
+
+<ng-template #loader>
+  <div class="row align-items-center h-75 text-center mt-5">
+    <div class="col">
+      <div class="lds-ellipsis">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <p>Working on your drink, Please wait in que.</p>
+    </div>
+  </div>
+</ng-template>
